@@ -1,14 +1,16 @@
 import pJSON from '../package.json'
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { AnimatedLogo } from './components'
+import App from './App'
 import * as serviceWorker from './serviceWorker'
 
 console.log(`${pJSON.name} ${pJSON.version}`)
 
 ReactDOM.render(
   <React.StrictMode>
-    <AnimatedLogo />
+    <App options={{
+    	optionZero: `nuffin`,
+    }} />
   </React.StrictMode>,
   document.getElementById('app')
 )
