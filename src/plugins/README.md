@@ -6,12 +6,27 @@ directory in order to clone the plugin repo into the correct place
 
 This'll get reimplemented as NPM/Github packages in due course
 
+#### AnimatedSVG
+> [listingslab-software/animated-svg](https://github.com/listingslab-software/animated-svg)
+
+#### PushToTalk
+> [listingslab-software/plugin-pushtotalk](https://github.com/listingslab-software/plugin-pushtotalk)
+
+
+### Install
+
 ```bash
 # Close the repo
-cd <your-pwa>
+cd <your-whitelabel-pwa>
 cd ./src/plugins/
+git clone https://github.com/listingslab-software/animated-svg AnimatedSVG
 git clone https://github.com/listingslab-software/plugin-pushtotalk PushToTalk
+cd <your-whitelabel-pwa>
 
-# Then periodically update it ....
+# add deps
+yarn add gsap 
+
+
+# Then periodically check for updates ....
 git fetch && git pull
 ```
