@@ -5,6 +5,9 @@
 Open Source [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_application) using
 
 - [React](https://reactjs.org/)
+
+> Create React App
+
 - [Firebase](https://console.firebase.google.com/)
 - [Material UI](https://material-ui.com/) ([Google's Material Design](https://material.io/design/))
 
