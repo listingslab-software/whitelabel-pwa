@@ -1,7 +1,7 @@
 {
   "name": "whitelabel-pwa",
   "description": "Bootstraps a powerful Progressive Web App",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "listingslab",
     "email": "listingslab@gmail.com"
