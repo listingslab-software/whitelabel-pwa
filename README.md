@@ -1,31 +1,21 @@
 # Whitelabel PWA
 
-Open Source Progressive Web App Framework using;
+![Whitelabel PWA Logo](https://whitelabel-pwa.web.app/png/apple-touch/apple-touch-icon-180x180.png)
 
-- React
-- Firebase
-- Material UI (Google Material Design System)
+Open Source [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_application) using
+
+- [React](https://reactjs.org/)
+- [Firebase](https://console.firebase.google.com/)
+- [Material UI](https://material-ui.com/)
+	- [Google Material Design System](https://material.io/design/)
 
 ## Plugins
 
-The way plugins are added is not great. Basically we are using the 
-project's __.gitignore__ file to ignore the **/src/plugins** 
-directory in order to clone the plugin repo into the correct place
-
-This'll get reimplemented as NPM/Github packages in due course
-
-```bash
-cd <your-pwa>
-cd ./src/plugins/
-git clone https://github.com/listingslab-software/plugin-pushtotalk PushToTalk
-
-# then periodically ....
-git fetch && git pull
-```
+- [About](./src/plugins/)
 
 ## WIP
 
-These plugins are in development
+Currently in development
 
 - [Animated SVG](https://animated-svg.web.app/)
 - [PushToTalk](https://push-to-talk.app)
