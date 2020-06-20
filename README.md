@@ -6,8 +6,7 @@ Open Source [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_
 
 - [React](https://reactjs.org/)
 - [Firebase](https://console.firebase.google.com/)
-- [Material UI](https://material-ui.com/)
-	- [Google Material Design System](https://material.io/design/)
+- [Material UI](https://material-ui.com/) ([Google's Material Design](https://material.io/design/))
 
 ## Plugins
 
