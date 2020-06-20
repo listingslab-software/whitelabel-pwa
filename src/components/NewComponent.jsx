@@ -11,7 +11,7 @@ export default function NewComponent() {
 
 	return (
 	  <React.Fragment>
-	  NewComponent
+	  	NewComponent
 	  </React.Fragment>
 	)
 }

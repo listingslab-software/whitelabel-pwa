@@ -1,5 +1,9 @@
 import React, {useEffect} from 'react'
 
+import {
+	Logo512sq
+} from '../graphics'
+
 export default function AnimatedLogo() {
 
 	useEffect(() => {
@@ -11,7 +15,9 @@ export default function AnimatedLogo() {
 
 	return (
 	  <React.Fragment>
-	  	AnimatedLogo
+		  <div className={`logo`}>
+		  	<Logo512sq />
+	  	</div>
 	  </React.Fragment>
 	)
 }
