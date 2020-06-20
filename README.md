@@ -15,9 +15,7 @@ Open Source [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_
 
 - [About](./src/plugins/)
 
-## WIP
-
-Currently in development
+## In development
 
 - [Animated SVG](https://animated-svg.web.app/)
 - [PushToTalk](https://push-to-talk.app)
