@@ -8,8 +8,8 @@ import {
 } from '@material-ui/core'
 import {
 	TopAppbar,
-	BottomButton,
 	LoremIpsum,
+	Menu,
 } from './components'
 
 import { AnimatedLogo } from './plugins/AnimatedSVG'
@@ -48,7 +48,7 @@ export default function App(props) {
 	  		<div className={classes.content}>
 	  			<LoremIpsum />
 	  		</div>
-	  		<BottomButton />
+	  		<Menu />
 	  	</div>
 	  </React.Fragment>
 	)

@@ -3,6 +3,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import WebFont from 'webfontloader'
 import App from './App'
+import { Provider } from 'react-redux'
+import reduxStore from './redux'
 import { 
 	MuiThemeProvider, 
 	createMuiTheme 
@@ -18,14 +20,22 @@ WebFont.load({
   }
 })
 
+const store = reduxStore()
+const getStore = () => {
+  return store
+}
+export { getStore }
+
 ReactDOM.render(
-  <React.StrictMode>
-  	<MuiThemeProvider theme={createMuiTheme(theme)}>
-	    <App options={{
-	    	optionZero: `nuffin`,
-	    }} />
-    </MuiThemeProvider>
-  </React.StrictMode>,
+  <React.Fragment>
+    <Provider store={store}>
+    	<MuiThemeProvider theme={createMuiTheme(theme)}>
+  	    <App options={{
+  	    	optionZero: `nuffin`,
+  	    }} />
+      </MuiThemeProvider>
+    </Provider>
+  </React.Fragment>,
   document.getElementById('app')
 )
 
