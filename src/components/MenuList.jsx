@@ -1,17 +1,14 @@
 import React from 'react'
 // import { useHistory } from 'react-router-dom'
-import { 
-    useDispatch,
-} from 'react-redux'
+// import { 
+//     useDispatch,
+// } from 'react-redux'
 import {
     makeStyles,
     List,
-    ListItem,
-    ListItemText,
-    ListItemIcon,
 } from '@material-ui/core/'
 import { 
-    Icon,
+    MenuListItem,
 } from './'
 
 const useStyles = makeStyles(theme => ({
@@ -20,28 +17,27 @@ const useStyles = makeStyles(theme => ({
 export default function MenuList(props) {
 
   const classes = useStyles()
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   // const history = useHistory()
   
   return  <List className={classes.none}>
-
-            <ListItem 
-              button
-              onClick={(e) => {
-                console.log (`history.push('/')`)
-                e.preventDefault()
-                dispatch({type: `APP/MENU_OPEN`, menuOpen: false})
-              }}>
-
-              <ListItemIcon>
-                <Icon icon={`home`} color={`primary`} />
-              </ListItemIcon>
-
-              <ListItemText 
-                primary={`Home`}
-                secondary={`Click here`}
-              />
-            </ListItem>
-          
+            <MenuListItem options={{
+              primary: `Home`,
+              // secondary: `go back to the start`,
+              icon: `home`,
+              onClick: () => {
+                console.log (`home`)
+              },
+            }}/>
+            <MenuListItem options={{
+              primary: `Github`,
+              // secondary: `Fork the repository`,
+              icon: `github`,
+              svg: true,
+              onClick: () => {
+                window.open(`https://github.com/listingslab-software/whitelabel-pwa`, `_blank`)
+                console.log (`github`)
+              },
+            }}/>
           </List>
 }

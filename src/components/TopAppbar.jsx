@@ -1,5 +1,7 @@
 import React from 'react'
-import WebFont from 'webfontloader'
+import { 
+    useDispatch,
+} from 'react-redux'
 import {
     makeStyles,
     Avatar,
@@ -8,15 +10,6 @@ import {
     Toolbar,
     Typography,
 } from '@material-ui/core/';
-// import {
-//     Icon,
-// } from './'
-
-WebFont.load({
-  google: {
-    families: ['Montserrat', 'sans-serif']
-  }
-})
 
 const useStyles = makeStyles(theme => ({
   grow: {
@@ -34,6 +27,7 @@ const useStyles = makeStyles(theme => ({
 export default function TopAppbar(props) {
   
   const classes = useStyles()
+  const dispatch = useDispatch()
 
   return (
     <div className={classes.grow}>
@@ -44,6 +38,7 @@ export default function TopAppbar(props) {
                 className={classes.btnPad}
                 onClick={(e) => {
                     e.preventDefault()
+                    dispatch({type: `APP/MENU_OPEN`, menuOpen: true})
                 }}>
                 <div className={classes.icon} >
                   <Avatar src={`/svg/WhitelabelLogo.svg`} />
