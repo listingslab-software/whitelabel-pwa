@@ -1,7 +1,9 @@
 
 ## Components
 
-NewComponent
+- Icon
+- NewComponent
+
 
 ```javascript
 
@@ -22,6 +24,5 @@ export default function NewComponent() {
 	  </React.Fragment>
 	)
 }
-
-
 ````
+
