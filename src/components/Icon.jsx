@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import IconHome from '@material-ui/icons/Home'
 import IconDefault from '@material-ui/icons/Help'
-import IconMui from '@material-ui/icons/Palette'
+import IconPalette from '@material-ui/icons/Palette'
 import IconMenu from '@material-ui/icons/MenuOutlined'
+import IconExpand from '@material-ui/icons/Add'
+import IconNext from '@material-ui/icons/ArrowForward'
+
 import {
     Github,
     WhitelabelLogo,
@@ -33,20 +36,26 @@ class Icon extends Component {
         }
         switch (icon) {
 
-            case `github`:
-                return (<Github className={classes.iconButton} color={iconColor} />)
+            case `palette`:
+                return (<IconPalette color={iconColor} />)
 
-            case `whitelabel`:
-                return (<WhitelabelLogo className={classes.iconButton} color={iconColor} />)
+            case `next`:
+                return (<IconNext color={iconColor} />)    
 
-            case `mui`:
-                return (<IconMui color={iconColor} />)
+            case `expand`:
+                return (<IconExpand color={iconColor} />)
 
             case `home`:
                 return (<IconHome color={iconColor} />)
 
             case `menu`:
                 return (<IconMenu color={iconColor} />)
+
+            case `github`:
+                return (<Github className={classes.iconButton} color={iconColor} />)
+
+            case `whitelabel`:
+                return (<WhitelabelLogo className={classes.iconButton} color={iconColor} />)
 
             default: {
                 return (<IconDefault color={iconColor} />)

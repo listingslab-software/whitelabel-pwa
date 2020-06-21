@@ -5,6 +5,7 @@ import LoremIpsum from './LoremIpsum'
 import Menu from './Menu'
 import MenuList from './MenuList'
 import MenuListItem from './MenuListItem'
+import ContentCard from './ContentCard'
 
 export {
 	Icon,
@@ -14,4 +15,5 @@ export {
 	Menu,
 	MenuList,
 	MenuListItem,
+	ContentCard,
 }

@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core'
 import {
 	TopAppbar,
-	LoremIpsum,
+	ContentCard,
 	Menu,
 } from './components'
 
@@ -16,11 +16,12 @@ import { AnimatedLogo } from './plugins/AnimatedSVG'
 
 const useStyles = makeStyles(theme => ({
     screen:{
-    	minWidth: '100vw',
-    	minHeight: '100vh',
+    	minWidth: '99vw',
+    	minHeight: '99vh',
     },
     content:{
     	marginTop: 65 + theme.spacing(),
+    	marginBottom: 75 + theme.spacing(),
     },
     btnTxt: {
     	marginLeft: theme.spacing(),
@@ -28,13 +29,14 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
+const content = {}
 
 export default function App(props) {
 	let { options } = props
 	if (!options) options = {}
 	const classes = useStyles()
 
-	const [identComplete, setIdentCompleted] = useState(false)
+	const [identComplete, setIdentCompleted] = useState(true)
 	const onIdentComplete = () => {
 		setIdentCompleted(true)
 	}
@@ -46,7 +48,9 @@ export default function App(props) {
 	  		<CssBaseline />
 	  		<TopAppbar />
 	  		<div className={classes.content}>
-	  			<LoremIpsum />
+	  			<ContentCard options={{
+	  				content
+	  			}} />
 	  		</div>
 	  		<Menu />
 	  	</div>
