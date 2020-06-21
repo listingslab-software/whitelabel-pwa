@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core'
 import {
 	TopAppbar,
-	LoremIpsum,
+	ContentCard,
 	Menu,
 } from './components'
 
@@ -16,11 +16,12 @@ import { AnimatedLogo } from './plugins/AnimatedSVG'
 
 const useStyles = makeStyles(theme => ({
     screen:{
-    	minWidth: '100vw',
-    	minHeight: '100vh',
+    	minWidth: '99vw',
+    	minHeight: '99vh',
     },
     content:{
     	marginTop: 65 + theme.spacing(),
+    	marginBottom: 75 + theme.spacing(),
     },
     btnTxt: {
     	marginLeft: theme.spacing(),
@@ -28,6 +29,23 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
+const content = {
+	title: `Home`,
+	subheader: `Welcome to Whitelabel PWA`,
+	avatar: `/logo192.png`,
+	media: `/jpg/gherkin.jpg`,
+	excerpt: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus orci non mauris lobortis, non hendrerit mi ultrices.`,
+	body: `Nam tincidunt eros nec purus euismod luctus. Suspendisse non aliquam turpis. Phasellus consectetur aliquet mollis. Vestibulum tempus elit vitae pretium volutpat. Duis risus urna, eleifend eget lectus nec, commodo dignissim diam. Nunc fermentum pharetra egestas. Fusce ac ante at eros tempor pulvinar. Fusce cursus sem ac turpis tincidunt, vel placerat mauris posuere. Duis convallis arcu at velit ornare placerat. Duis accumsan id justo sit amet tempus. Suspendisse luctus et libero quis euismod. In a luctus metus, placerat laoreet massa. Suspendisse in vulputate enim. Mauris et arcu lacus.`,
+	links: [
+		{
+			url:`/`,
+			label: `Home`,
+			title: `Home`,
+			target: `_self`,
+			icon: `home`,
+		},
+	],	
+}
 
 export default function App(props) {
 	let { options } = props
@@ -46,7 +64,9 @@ export default function App(props) {
 	  		<CssBaseline />
 	  		<TopAppbar />
 	  		<div className={classes.content}>
-	  			<LoremIpsum />
+	  			<ContentCard options={{
+	  				content
+	  			}} />
 	  		</div>
 	  		<Menu />
 	  	</div>
