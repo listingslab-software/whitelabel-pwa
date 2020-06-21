@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-const Logo512sq = props => {
+const WhitelabelLogo = props => {
 
     const { color } = props
     let c = `#000`
@@ -28,4 +28,4 @@ const Logo512sq = props => {
         </React.Fragment>
     )
 }
-export default Logo512sq
+export default WhitelabelLogo

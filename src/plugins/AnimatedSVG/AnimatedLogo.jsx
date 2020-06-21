@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import { animateLogo } from './animate'
 import {
-	Logo512sq
+	WhitelabelLogo,
 } from './graphics/jsx'
 
 export default function AnimatedLogo(props) {
@@ -11,9 +11,8 @@ export default function AnimatedLogo(props) {
 	} = props.options
 
 	useEffect(() => {
-		// console.log ('AnimatedLogo', props)
 		setTimeout(()=>{
-			animateLogo(`fadeToWhite`, `#Logo512sq`, onComplete) 
+			animateLogo(`fadeToWhite`, `#logo`, onComplete) 
 		}, 333)
 	    return () => {
 	    	// console.log ('Cleanup AnimatedLogo')
@@ -22,8 +21,8 @@ export default function AnimatedLogo(props) {
 
 	return (
 	  <React.Fragment>
-		 <div id={`Logo512sq`} className={`logo`}>
-		 	<Logo512sq />
+		 <div id={`logo`} className={`logo`}>
+		 	<WhitelabelLogo />
 	  	</div>
 	  </React.Fragment>
 	)

@@ -1,7 +1,7 @@
 {
   "name": "whitelabel-pwa",
   "description": "Bootstraps a powerful Progressive Web App",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "author": {
     "name": "listingslab",
     "email": "listingslab@gmail.com"
@@ -28,7 +28,8 @@
     "gsap": "^3.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "webfontloader": "^1.6.28"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -3,9 +3,10 @@ import { withStyles } from '@material-ui/core/styles'
 import IconHome from '@material-ui/icons/Home'
 import IconDefault from '@material-ui/icons/Help'
 import IconMui from '@material-ui/icons/Palette'
-
+import IconMenu from '@material-ui/icons/MenuOutlined'
 import {
     Github,
+    WhitelabelLogo,
 } from '../plugins/AnimatedSVG/graphics/jsx'
 
 const styles = theme => ({
@@ -35,11 +36,17 @@ class Icon extends Component {
             case `github`:
                 return (<Github className={classes.iconButton} color={iconColor} />)
 
+            case `whitelabel`:
+                return (<WhitelabelLogo className={classes.iconButton} color={iconColor} />)
+
             case `mui`:
                 return (<IconMui color={iconColor} />)
 
             case `home`:
                 return (<IconHome color={iconColor} />)
+
+            case `menu`:
+                return (<IconMenu color={iconColor} />)
 
             default: {
                 return (<IconDefault color={iconColor} />)

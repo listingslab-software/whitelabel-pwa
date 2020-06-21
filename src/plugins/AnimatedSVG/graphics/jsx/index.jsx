@@ -1,7 +1,7 @@
 import Github from './Github'
-import Logo512sq from './Logo512sq'
+import WhitelabelLogo from './WhitelabelLogo'
 
 export {
   Github,
-  Logo512sq,
+  WhitelabelLogo,
 }
