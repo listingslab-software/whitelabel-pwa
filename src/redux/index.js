@@ -4,17 +4,23 @@ import { animationReducer, animationSlice } from './animation/reducer'
 import { appReducer, appSlice } from './app/reducer'
 import { apiReducer, apiSlice } from './api/reducer'
 
+import { pushToTalkReducer, pushToTalkSlice } from '../plugins/PushToTalk/reducer'
+
 const reduxStore = () => {
   const reducer = combineReducers({
     api: apiReducer,
     app: appReducer,
     animation: animationReducer,
+
+    pushToTalk: pushToTalkReducer,
   })
 
   const preloadedState = {
     api: apiSlice,
     app: appSlice,
     animation: animationSlice,
+
+    pushToTalk: pushToTalkSlice,
   }
   
   const middleware = [

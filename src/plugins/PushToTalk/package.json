@@ -1,0 +1,14 @@
+{
+  "name": "PushToTalk",
+  "description": "Reach out with accuracy",
+  "version": "1.0.3",
+  "author": {
+    "name": "listingslab",
+    "email": "listingslab@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/listingslab-software/plugin-pushtotalk"
+  }
+}

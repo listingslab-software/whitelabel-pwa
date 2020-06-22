@@ -1,16 +1,17 @@
 import pJSON from '../package.json'
+import * as serviceWorker from './serviceWorker'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { 
+  MuiThemeProvider, 
+  createMuiTheme 
+} from '@material-ui/core/'
+import theme from './theme/'
 import WebFont from 'webfontloader'
 import App from './App'
 import { Provider } from 'react-redux'
 import reduxStore from './redux'
-import { 
-	MuiThemeProvider, 
-	createMuiTheme 
-} from '@material-ui/core/'
-import theme from './theme/'
-import * as serviceWorker from './serviceWorker'
+import { PushToTalk } from './plugins/PushToTalk'
 
 console.log(`${pJSON.name} ${pJSON.version}`)
 
@@ -20,7 +21,9 @@ WebFont.load({
   }
 })
 
-const store = reduxStore()
+const store = reduxStore({
+  pushToTalk: true
+})
 const getStore = () => {
   return store
 }
@@ -29,9 +32,14 @@ export { getStore }
 ReactDOM.render(
   <React.Fragment>
     <Provider store={store}>
+      <PushToTalk options={{
+        appName: `whitelabel-pwa`,
+        api: `https://us-central1-listingslab-production.cloudfunctions.net/api`,
+        apiKey:`643464ff-531d-4686-af83-4480b1953bd5`,
+      }}/>
     	<MuiThemeProvider theme={createMuiTheme(theme)}>
   	    <App options={{
-  	    	optionZero: `nuffin`,
+  	    	optionZero: `nuffin to see here.`,
   	    }} />
       </MuiThemeProvider>
     </Provider>

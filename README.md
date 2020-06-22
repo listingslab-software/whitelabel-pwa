@@ -8,11 +8,7 @@ Open Source [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_
 - [React](https://reactjs.org/) (Create React App)
 - [Material UI](https://material-ui.com/) ([Google's Material Design](https://material.io/design/))
 
-#### Plugins
-
-- [About](./src/plugins/)
-
-#### In development
+#### [Plugins](./src/plugins/)
 
 - [Animated SVG](https://animated-svg.web.app/)
 - [PushToTalk](https://push-to-talk.app)
