@@ -34,6 +34,7 @@ class PushToTalk extends React.Component {
             fingerprinting,
             ipgeoing,
             ipgeo,
+            ipgeoDone,
             // tinging,
             // tingSuccess,
             // app,
@@ -44,7 +45,7 @@ class PushToTalk extends React.Component {
         if (!ua){
             getUA()
         }   
-        if (!ipgeo && !ipgeoing){
+        if (!ipgeo && !ipgeoing && !ipgeoDone ){
             getIpgeo()
         }
         if (!fingerprint && !fingerprinting){

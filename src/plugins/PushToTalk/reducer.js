@@ -10,6 +10,7 @@ export const fingerprinting = createAction(`PUSHTOTALK/FINGERPRINTING`)
 export const fingerprint = createAction(`PUSHTOTALK/FINGERPRINT`)
 export const ipgeoing = createAction(`PUSHTOTALK/IPGEOING`)
 export const ipgeo = createAction(`PUSHTOTALK/IPGEO`)
+export const ipgeoDone = createAction(`PUSHTOTALK/IPGEO_DONE`)
 export const ting = createAction(`PUSHTOTALK/TING`)
 export const tinging = createAction(`PUSHTOTALK/TINGING`)
 export const tingSuccess = createAction(`PUSHTOTALK/TING_SUCCESS`)
@@ -28,6 +29,7 @@ export const pushToTalkSlice = {
 	fingerprinting: false,
 	ipgeo: null,
 	ipgeoing: false,
+	ipgeoDone: false,
 	ua: null,
 }
 
@@ -50,6 +52,11 @@ const pushToTalkReducer = createReducer(pushToTalkSlice, {
 
 	[ting]: (state, action) => {
 	    state.ting = action.ting
+	    return state
+	},
+
+	[ipgeoDone]: (state, action) => {
+	    state.ipgeoDone = action.ipgeoDone
 	    return state
 	},
 
