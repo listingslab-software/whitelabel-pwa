@@ -16,8 +16,8 @@ import { AnimatedLogo } from './plugins/AnimatedSVG'
 
 const useStyles = makeStyles(theme => ({
     screen:{
-    	minWidth: '99vw',
-    	minHeight: '99vh',
+    	minWidth: '100vw',
+    	minHeight: '98vh',
     },
     content:{
     	marginTop: 65 + theme.spacing(),
@@ -29,14 +29,12 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const content = {}
-
 export default function App(props) {
 	let { options } = props
 	if (!options) options = {}
 	const classes = useStyles()
 
-	const [identComplete, setIdentCompleted] = useState(true)
+	const [identComplete, setIdentCompleted] = useState(false)
 	const onIdentComplete = () => {
 		setIdentCompleted(true)
 	}
@@ -48,9 +46,7 @@ export default function App(props) {
 	  		<CssBaseline />
 	  		<TopAppbar />
 	  		<div className={classes.content}>
-	  			<ContentCard options={{
-	  				content
-	  			}} />
+	  			<ContentCard />
 	  		</div>
 	  		<Menu />
 	  	</div>

@@ -21,7 +21,12 @@ const useStyles = makeStyles(theme => ({
   btnPad:{
     padding: theme.spacing(),
     borderRadius: theme.spacing(0.5),
-  }
+  },
+  appbar:{
+    background: 'none',
+    boxShadow: 'none',
+    border: 'none',
+  },
 }))
 
 export default function TopAppbar(props) {
@@ -31,7 +36,7 @@ export default function TopAppbar(props) {
 
   return (
     <div className={classes.grow}>
-      <AppBar position={`fixed`}>
+      <AppBar position={`fixed`} className={classes.appbar}>
         <Toolbar className={classes.topToolbar}>
             <div className={classes.grow} /> 
               <ButtonBase
@@ -43,7 +48,7 @@ export default function TopAppbar(props) {
                 <div className={classes.icon} >
                   <Avatar src={`/svg/WhitelabelLogo.svg`} />
                 </div>
-                <Typography variant={`h6`} color={`inherit`}>
+                <Typography variant={`h6`} color={`primary`}>
                   {`Whitelabel PWA ™`}
                 </Typography>
               </ButtonBase>
