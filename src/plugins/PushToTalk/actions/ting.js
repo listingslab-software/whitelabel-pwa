@@ -4,6 +4,13 @@ import {
 } from '../../../'
 
 export const ting = () => {
+	console.log ('ting')
+}
+
+
+
+
+export const ting_ = () => {
 	const store = getStore()
 	store.dispatch({ type: `APP/SNACKBAR`, snackbar: null })
 	const pushToTalkSlice = store.getState().pushToTalk

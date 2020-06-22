@@ -1,15 +1,15 @@
 import { 
 	getStore,
-	getHistory,
+	// getHistory,
 } from '../../../'
 
 export const createTing = () => {
 
 	const store = getStore()
 	const state = store.getState()
-	const history = getHistory()
-	const pathname = history.location.pathname
-
+	// const history = getHistory()
+	// const pathname = history.location.pathname
+	let env = process.env.REACT_APP_ENV
 	let ready = true
 	let app = state.pushToTalk.app
 	let version = state.pushToTalk.version
@@ -27,8 +27,6 @@ export const createTing = () => {
 	let lng = null
 	let province = null
 	let postcode = null
-	let env = process.env.REACT_APP_ENV
-	
 	if (state.pushToTalk.ipgeo){
 		ip = state.pushToTalk.ipgeo.ip
 		country = state.pushToTalk.ipgeo.country_name
@@ -60,7 +58,7 @@ export const createTing = () => {
 	let ting = {
 		app,
 		version,
-		pathname,
+		// pathname,
 		fingerprint,
 		os,
 		browser,
@@ -78,7 +76,6 @@ export const createTing = () => {
 		time: state.pushToTalk.ticks,
 		env,
 	}
-
 	if (!ready) ting = null	
 	store.dispatch({ type: `PUSHTOTALK/TING`, ting })
 }

@@ -13,7 +13,7 @@ export default function AnimatedLogo(props) {
 	useEffect(() => {
 		setTimeout(()=>{
 			animateLogo(`fadeToWhite`, `#logo`, onComplete) 
-		}, 333)
+		}, 500)
 	    return () => {
 	    	// console.log ('Cleanup AnimatedLogo')
 	    }

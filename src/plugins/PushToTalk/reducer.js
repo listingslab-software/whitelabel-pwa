@@ -79,7 +79,7 @@ const pushToTalkReducer = createReducer(pushToTalkSlice, {
 	},
 
 	[tick]: (state, action) => {
-		state.ticks = parseFloat(state.ticks) + 1
+		state.ticks = state.ticks + 1
 		return state
 	},
 

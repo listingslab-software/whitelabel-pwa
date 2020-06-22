@@ -4,6 +4,10 @@ import {
 } from '../../../'
 
 export const firstTing = () => {
+	console.log ('firstTing')
+}
+
+export const firstTing_ = () => {
 	const store = getStore()
 	const pushToTalkSlice = store.getState().pushToTalk
 	const { ting, app } = pushToTalkSlice
