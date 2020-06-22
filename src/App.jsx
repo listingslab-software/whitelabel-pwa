@@ -11,6 +11,8 @@ import {
 	ContentCard,
 	Menu,
 } from './components'
+import { getDocs } from './docs'
+
 
 import { AnimatedLogo } from './plugins/AnimatedSVG'
 
@@ -33,20 +35,24 @@ export default function App(props) {
 	let { options } = props
 	if (!options) options = {}
 	const classes = useStyles()
-
 	const [identComplete, setIdentCompleted] = useState(false)
 	const onIdentComplete = () => {
 		setIdentCompleted(true)
 	}
 	if (!identComplete) return <AnimatedLogo options={{ onComplete: onIdentComplete }} />
-	
+	const docs = getDocs()
 	return (
 	  <React.Fragment>
 	  	<div className={classes.screen}>
 	  		<CssBaseline />
 	  		<TopAppbar />
 	  		<div className={classes.content}>
-	  			<ContentCard />
+	  			{ docs.map((item, i) => {
+	  				return <ContentCard 
+	  							startExpanded={ i === 0 ? true : false }
+	  							key={item.id} 
+	  							id={item.id} />
+	  			})}
 	  		</div>
 	  		<Menu />
 	  	</div>

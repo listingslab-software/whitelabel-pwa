@@ -5,8 +5,9 @@ let duration = 1
 const fadeToWhite = (div, callback) => {
      gsap.to(div, {
         duration: 1 * duration,
-        rotationY: -360,
+        rotationX: -360,
         opacity: 0,
+        scale: 0.65,
         onComplete: callback,
     });
 }

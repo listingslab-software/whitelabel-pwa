@@ -46,7 +46,7 @@ export default function TopAppbar(props) {
                     dispatch({type: `APP/MENU_OPEN`, menuOpen: true})
                 }}>
                 <div className={classes.icon} >
-                  <Avatar src={`/svg/WhitelabelLogo.svg`} />
+                  <Avatar src={`/svg/avatars/listingslab.svg`} />
                 </div>
                 <Typography variant={`h6`} color={`primary`}>
                   {`Whitelabel PWA ™`}

@@ -4,10 +4,10 @@ const docs = [
 		id: `listingslab-0000-1111122222333333`,
 		data: {
 			title: `Home`,
-			// subheader: `Welcome to Whitelabel PWA`,
-			avatar: `/svg/avatars/listingslab.svg`,
-			media: `/jpg/gherkin.jpg`,
-			excerpt: `Progressive Web Apps?`,
+			label: `What are Progressive Web Apps?`,
+			subheader: `Find out about Whitelabel PWA™`,
+			// avatar: `/svg/avatars/listingslab.svg`,
+			media: `/png/content/pwa.png`,
 			body: `Progressive Web Apps are user experiences that have the reach of the web, and are:
 			- Reliable
 			- Fast
@@ -17,8 +17,23 @@ const docs = [
 			This new level of quality allows Progressive Web Apps to earn a place on the user's home screen.`,
 			links: []
 		}
+	},
+	{
+		id: `listingslab-0000-x`,
+		data: {
+			title: `About`,
+			label: `How does it work?`,
+			subheader: `About Whitelabel PWA`,
+			media: `/jpg/default.jpg`,
+			body: `Nunc fermentum pharetra egestas. Fusce ac ante at eros tempor pulvinar. Fusce cursus sem ac turpis tincidunt, vel placerat mauris posuere. Duis convallis arcu at velit ornare placerat. Duis accumsan id justo sit amet tempus. Suspendisse luctus et libero quis euismod. In a luctus metus, placerat laoreet massa. Suspendisse in vulputate enim. Mauris et arcu lacus.`,
+			links: []
+		}
 	}
 ]
+
+export const getDocs = () => {
+	return docs
+}
 
 export const getDocById = id => {
 	let doc = {

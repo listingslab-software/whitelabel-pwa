@@ -5,12 +5,10 @@ import {
     makeStyles,
     Button,
     Card,
-    CardHeader,
     CardMedia,
     CardContent,
     CardActions,
     Collapse,
-    Avatar,
     IconButton,
     Typography,
     Grid,
@@ -37,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
+    // cursor: 'pointer',
+    marginLeft: theme.spacing(),
+    marginRight: theme.spacing(),
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -46,18 +47,19 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   expandOpen: {
-    transform: 'rotate(180deg)',
+    transform: 'rotate(225deg)',
   },
   avatar: {
     // backgroundColor: theme.palette.secondary.main,
   },
 }))
 
-export default function ContentCard() {
+export default function ContentCard(props) {
 
   const classes = useStyles()
-  let content = getDocById(`listingslab-0000-1111122222333333`)
-  const [expanded, setExpanded] = React.useState(true)
+  const { id, startExpanded } = props
+  let content = getDocById(id)
+  const [expanded, setExpanded] = React.useState(startExpanded)
 
   const handleExpandClick = () => {
     setExpanded(!expanded)
@@ -65,59 +67,45 @@ export default function ContentCard() {
 
   return (
     <Card className={classes.contentCard}>
-      <CardHeader
-        title={content.title}
-        subheader={content.subheader}
-        avatar={<Avatar src={content.avatar} className={classes.avatar} />}
-        action={<IconButton
-                  onClick={(e) => {
-
-                  }}
-                >
-                  <Icon icon={`next`} />
-                </IconButton>}
-      />      
-      <CardContent>
-    
-        <Grid container>
-          
-          
-          <Grid item xs={12} md={ content.media ? 6 : 12 } className={classes.gridItem}>
-            
-              <Typography variant={`h6`} gutterBottom>
-                {content.excerpt}
-              </Typography>
-              <IconButton
-                  className={clsx(classes.expand, {
-                    [classes.expandOpen]: expanded,
-                  })}
-                  onClick={handleExpandClick}
-                  aria-expanded={expanded}
-                  aria-label="Expand">
-                  <Icon icon={`expand`} />
-                </IconButton>
-          </Grid>
-
-          { content.media ? <Grid item xs={12} md={6} className={classes.gridItem}>
-            <CardMedia
-              className={classes.media}
-              image={content.media}
-              title={content.title}
-            /></Grid> : null }
-
-
-        </Grid>
       
-        <Collapse 
-          unmountOnExit
-          in={expanded} 
-          timeout={`auto`}>
-          <CardContent>
-            <Typography variant={`body1`} gutterBottom>
-              {content.body}
-            </Typography>
-          </CardContent>
-        </Collapse>
+    
+              <IconButton
+                className={clsx(classes.expand, {
+                  [classes.expandOpen]: expanded,
+                })}
+                onClick={handleExpandClick}
+                aria-expanded={expanded}
+                aria-label="Expand">
+                <Icon icon={`expand`} />
+              </IconButton>
+
+              <Button
+                variant={`text`}
+                color={`primary`}
+                onClick={handleExpandClick}>
+                {content.label}
+              </Button>
+              
+              <Collapse 
+                unmountOnExit
+                in={expanded} 
+                timeout={`auto`}>
+                <CardContent>
+                    <Grid container>
+                      <Grid item xs={12} md={content.media ? 8 : 12 } className={classes.gridItem}>
+                        <Typography variant={`body1`} gutterBottom>
+                          {content.body}
+                        </Typography>
+                      </Grid>
+                      { content.media ? <Grid item xs={12} md={4} className={classes.gridItem}>
+                        <CardMedia
+                          className={classes.media}
+                          image={content.media}
+                          title={content.title}
+                        /></Grid> : null }
+                    </Grid>
+                </CardContent>
+              </Collapse>
 
         {content.links.length ? <CardActions disableSpacing>
             <Button 
@@ -133,12 +121,22 @@ export default function ContentCard() {
               </span> 
               <Icon icon={`next`} color={`inherit`} />
             </Button>
-
           </CardActions> : null }
-          
-
-        </CardContent>
-
     </Card>
   )
 }
+
+
+/*
+      <CardHeader
+        title={content.title}
+        subheader={content.subheader}
+        avatar={ content.avatar ? <Avatar src={content.avatar} className={classes.avatar} /> : null }
+        action={<IconButton
+                  onClick={(e) => {
+                    console.log ('next please')
+                  }}>
+                  <Icon icon={`next`} />
+                </IconButton>}
+      />  
+*/

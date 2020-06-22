@@ -39,5 +39,16 @@ export default function MenuList(props) {
                 console.log (`github`)
               },
             }}/>
+
+            <MenuListItem options={{
+              primary: `Next`,
+              // secondary: `go back to the start`,
+              icon: `next`,
+              onClick: () => {
+                console.log (`Next`)
+              },
+            }}/>
+
+
           </List>
 }
