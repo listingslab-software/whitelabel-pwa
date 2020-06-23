@@ -11,7 +11,6 @@ import WebFont from 'webfontloader'
 import App from './App'
 import { Provider } from 'react-redux'
 import reduxStore from './redux'
-import { PushToTalk } from './plugins/PushToTalk'
 
 console.log(`${pJSON.name} ${pJSON.version}`)
 
@@ -32,11 +31,6 @@ export { getStore }
 ReactDOM.render(
   <React.Fragment>
     <Provider store={store}>
-      <PushToTalk options={{
-        appName: `whitelabel-pwa`,
-        api: `https://us-central1-listingslab-production.cloudfunctions.net/api`,
-        apiKey:`643464ff-531d-4686-af83-4480b1953bd5`,
-      }}/>
     	<MuiThemeProvider theme={createMuiTheme(theme)}>
   	    <App options={{
   	    	optionZero: `nuffin to see here.`,
