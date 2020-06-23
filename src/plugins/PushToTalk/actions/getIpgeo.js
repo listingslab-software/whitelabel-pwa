@@ -11,7 +11,7 @@ export const getIpgeo = () => {
 	axios
 		.get(`${api}/ipgeo`)
 			.then(function(res) { 
-				console.log (res.data.response)
+				console.log (res.data.response.data)
 				store.dispatch({ type: `PUSHTOTALK/IPGEO`, ipgeo: res.data.response })
 			})
 			.catch(function(error) {
